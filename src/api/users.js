@@ -2,10 +2,18 @@ const express = require('express');
 const User = require('../models/user');
 
 const router = express.Router();
-
+// route pour enregistrer un nouvel utilisateur
 router.post('/register', async (req, res) => {
     try {
         const { name, email, password } = req.body;
+
+        // Vérifier si l'utilisateur existe déjà dans la base de données
+        const userExists = await User.findByEmail(email);
+        if (userExists) {
+            return res.status(400).json({ message: 'A user with this email already exists' });
+        }
+
+        // Si l'utilisateur n'existe pas, créer un nouveau compte utilisateur
         await User.createUser(name, email, password);
         res.status(201).json({ message: 'User registered successfully' });
     } catch (err) {
@@ -14,7 +22,8 @@ router.post('/register', async (req, res) => {
     }
 });
 
-// login    
+
+// route pour connecter un utilisateur renvoie l'id de l'utilisateur et son nom et son email  
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;

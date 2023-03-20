@@ -1,0 +1,64 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inscription</title>
+	
+	<!-- CSS Bootstrap et personnalisé -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/login-style.css">
+	
+	<!-- Polices de caractères -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	
+	<!-- Icônes Font Awesome -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Inscription</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-6 col-lg-5">
+					<div class="login-wrap p-4 p-md-5">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="fa fa-user-plus"></span>
+						</div>
+						<form id="register-form" class="login-form">
+							<div class="form-group">
+								<label for="name">Nom :</label>
+								<input type="text" class="form-control rounded-left" id="name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email :</label>
+								<input type="email" class="form-control rounded-left" id="email" required>
+							</div>
+							<div class="form-group d-flex">
+								<label for="password">Mot de passe :</label>
+								<input type="password" class="form-control rounded-left" id="password" required>
+							</div>
+							<div class="form-group d-flex">
+								<label for="password-confirm">Confirmez le mot de passe :</label>
+								<input type="password" class="form-control rounded-left" id="password-confirm" required>
+							</div>
+                           	<div class="form-group" >
+                               	<button type="submit" class="btn  btn-primary rounded submit p-3 px-5">S'inscrire</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Scripts Bootstrap et personnalisé -->
+    <script src="app.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

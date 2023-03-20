@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portefeuille - Inscription</title>
+  <!-- Ajoutez ici les liens vers les fichiers CSS de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Ajoutez ici le lien vers votre fichier CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-md-4">
+        <form id="register-form" class="form-signin" method="POST">
+          <h2 class="mb-4 font-weight-normal text-center">Inscription</h2>
+          <div class="form-group">
+            <label for="inputName" class="sr-only">Nom complet</label>
+            <input type="text" id="inputName" name="name" class="form-control" placeholder="Nom complet" required="" autofocus="">
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="sr-only">Adresse e-mail</label>
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Adresse e-mail" required="">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="sr-only">Mot de passe</label>
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Mot de passe" required="">
+          </div>
+          <button id="register-btn" class="btn btn-lg btn-primary btn-block" type="submit">Inscription</button>
+          <div class="text-center mt-3">
+            <a href="/">Déjà inscrit ? Connectez-vous</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Ajoutez ici les liens vers les fichiers JavaScript de Bootstrap et Axios -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script>
+ const registerForm = document.getElementById('register-form');
+const registerBtn = document.getElementById('register-btn');
+
+registerForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const nameInput = document.getElementById('inputName');
+  const emailInput = document.getElementById('inputEmail');
+  const passwordInput = document.getElementById('inputPassword');
+
+  try {
+    const response = await axios.post('/api/users/register', {
+      name: nameInput.value,
+      email: emailInput.value,
+      password: passwordInput.value
+    });
+    console.log(response.data);
+    Swal.fire({
+      icon: 'success',
+      title: 'Inscription réussie',
+      text: 'Vous pouvez maintenant vous connecter à votre compte',
+      confirmButtonText: 'Se connecter'
+    }).then(() => {
+      window.location.href = '/login';
+    });
+  } catch (error) {
+    console.error(error);
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: error.response.data.error
+    });
+  }
+});

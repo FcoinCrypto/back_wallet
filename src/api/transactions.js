@@ -10,7 +10,7 @@ router.post('/send', async (req, res) => {
         res.status(201).json({ message: 'Transaction sent successfully' });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ message: 'Failed to send transaction' });
+        res.status(500).json({ message: 'Failed to send transaction', error: err.message});
     }
 });
 

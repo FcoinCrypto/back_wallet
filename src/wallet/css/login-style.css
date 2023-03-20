@@ -1,0 +1,128 @@
+/* Custom styles for Login Page */
+.ftco-section {
+    padding: 7em 0;
+  }
+  
+  .login-wrap {
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+    border-radius: 20px;
+  }
+  
+  .login-wrap .icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #f7c005;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  
+  .login-wrap h3 {
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-wrap .form-control {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    transition: border-color 0.5s;
+  }
+  
+  .login-wrap .form-control:focus {
+    border-color: #f7c005;
+  }
+  
+  .login-wrap label.checkbox-wrap {
+    font-size: 16px;
+    color: #999;
+    font-weight: 400;
+    margin-bottom: 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .login-wrap label.checkbox-wrap input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .login-wrap label.checkbox-wrap .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+  }
+  
+  .login-wrap label.checkbox-wrap input[type="checkbox"]:checked + .checkmark {
+    background-color: #f7c005;
+  }
+  
+  .login-wrap label.checkbox-wrap .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .login-wrap label.checkbox-wrap input[type="checkbox"]:checked + .checkmark:after {
+    display: block;
+  }
+  
+  .login-wrap label.checkbox-wrap .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .login-wrap .submit {
+    background-color: #f7c005;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  
+  .login-wrap .submit:hover, .login-wrap .submit:focus {
+    background-color: #2e00c7;
+    outline: none;
+  }
+  
+  @media (max-width: 768px) {
+    .login-wrap .form-group {
+      flex-direction: column;
+    }
+    .login-wrap .form-group label.checkbox-wrap {
+      margin-bottom: 0;
+    }
+    .login-wrap .form-group .w-50 {
+      margin-top: 20px;
+    }
+  }
+    

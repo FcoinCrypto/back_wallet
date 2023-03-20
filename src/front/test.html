@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Portefeuille - Tableau de bord</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <span data-feather="home"></span>
+                Tableau de bord <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="file"></span>
+                Historique des transactions
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="shopping-cart"></span>
+                Envoyer de l'argent
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users"></span>
+                Acheter des devises
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Balance du portefeuille</h1>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Solde disponible</h5>
+                <h6 class="card-subtitle mb-2 text-muted">EUR</h6>
+                <p class="card-text">1,234.56</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Solde bloqué</h5>
+                <h6 class="card-subtitle mb-2 text-muted">EUR</h6>
+                <p class="card-text">0.00</p>
+              </div>
+            </div>
+          </div>
+<div class="col-md-4 mb-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      Balance
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Solde actuel</h5>
+      <p class="card-text h1">$1000</p>
+      <a href="#" class="btn btn-primary">Ajouter de l'argent</a>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      Historique des transactions
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Montant</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>01/01/2022</td>
+            <td>Achat de Bitcoin</td>
+            <td class="text-danger">-$500</td>
+          </tr>
+          <tr>
+            <td>15/02/2022</td>
+            <td>Transfert à John Doe</td>
+            <td class="text-success">$250</td>
+          </tr>
+          <tr>
+            <td>20/03/2022</td>
+            <td>Achat de Ethereum</td>
+            <td class="text-danger">-$300</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
